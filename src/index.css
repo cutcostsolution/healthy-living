@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 30 15% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 15% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 15% 18%;
+    --primary: 152 35% 28%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 38 60% 55%;
+    --secondary-foreground: 30 15% 18%;
+    --muted: 40 20% 95%;
+    --muted-foreground: 30 10% 45%;
+    --accent: 38 60% 55%;
+    --accent-foreground: 30 15% 18%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 15% 88%;
+    --input: 40 15% 92%;
+    --ring: 152 35% 28%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.02); opacity: 0.9; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes breathe {
+  0%, 100% { box-shadow: 0 0 20px rgba(74, 124, 89, 0.15); }
+  50% { box-shadow: 0 0 40px rgba(74, 124, 89, 0.3); }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+.float-animation-delayed {
+  animation: float 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.breathe {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+/* Progress bar */
+.progress-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #faf8f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #c4b99e;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a89b7d;
+}
+
+/* Glass effect */
+.glass-warm {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Gradient text */
+.text-gradient-warm {
+  background: linear-gradient(135deg, #2d5a3d 0%, #4a7c59 50%, #d4a843 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Selection buttons */
+.selection-btn {
+  @apply py-3 px-5 rounded-xl border-2 border-stone-200 transition-all duration-200 text-left;
+}
+
+.selection-btn:hover {
+  @apply border-stone-300 bg-stone-50;
+}
+
+.selection-btn.active {
+  @apply border-[#4a7c59] bg-[#f0f7f1];
+}
+
+/* Hero gradient */
+.hero-gradient-warm {
+  background: linear-gradient(165deg, #faf8f5 0%, #f5f0e8 40%, #e8f0e9 70%, #faf8f5 100%);
+}
