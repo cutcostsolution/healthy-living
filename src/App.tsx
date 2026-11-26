@@ -13,6 +13,7 @@ import AccessCodePage from './pages/AccessCodePage'
 import QuizPage from './pages/QuizPage'
 import ResultsPage from './pages/ResultsPage'
 import NotFoundPage from './pages/NotFoundPage'
+import AdminPage from './pages/AdminPage'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/quiz/access" element={<AccessCodePage />} />
         <Route path="/quiz/start" element={<QuizPage />} />
         <Route path="/results" element={<ResultsPage />} />
+        <Route path="/admin" element={<AdminPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
